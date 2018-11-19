@@ -948,6 +948,11 @@ footer {
   font-size: 14px;
   color: #737882; }
 
+.list-item {
+  font-size: 24px;
+  padding: 10px;
+}
+
 .map-wrap {
   padding: 0; }
 
