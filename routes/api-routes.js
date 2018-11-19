@@ -1,5 +1,6 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
+var moment = require('moment');
 var passport = require("../config/passport");
 
 module.exports = function(app) {
@@ -52,4 +53,101 @@ module.exports = function(app) {
     }
   });
 
-};
+  
+  
+  
+    app.get("/search/:city/:state/:start/:end", function(req, res) {
+
+      var cityLocation = req.params.city;
+      var stateLocation = req.params.state;
+
+      var startDate = req.params.start;
+      
+      var endDate = req.params.end;
+
+      var momStart = moment("'" + startDate + "'").format("YYYY-MM-DD")
+      console.log(momStart)
+      
+      var momEnd = moment("'" + endDate + "'").format("YYYY-MM-DD")
+      console.log(momEnd)
+
+
+      db.Listing.findAll({
+
+        where : {City : cityLocation,
+                State : stateLocation,
+                StartDate: {
+                  $lte: momStart
+                },
+
+                EndDate: {
+                  $gte : momEnd
+                }
+              }
+
+        }).then(function(searchRes) {
+          res.json(searchRes);
+      })
+
+    });
+    
+  
+
+  app.post("/api/listings", function(req, res){
+
+    let data = {...req.body};
+    data.UserId = req.user.id;
+  
+    db.Listing.create(data).then(function(dbListing) {
+      res.json(dbListing);
+  })
+  
+  })
+
+  app.post("/api/:listingID/ratings", function(req, res){
+
+    let data1 = {...req.body};
+    data1.ListingId = req.params.listingID
+
+    console.log(data1)
+
+
+    db.Rating.create(data1).then(function(dbRating) {
+      res.json(dbRating);
+  })
+  
+  })
+
+
+
+   
+  app.put("/api/listings", function(req, res) {
+    db.Listing.update(
+      req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      }).then(function(dbListing) {
+      res.json(dbListing);
+    });
+  });
+
+
+
+
+  // app.delete("/api/listings/:id", function(req, res) {
+  //   db.Post.destroy({
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   }).then(function(dbPost) {
+  //     res.json(dbPost);
+  //   });
+  // });
+
+  
+
+}
+
+

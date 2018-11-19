@@ -19,16 +19,319 @@
     </div>
   </div>
 </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col col-xl-12">
+      <div id = "airbnb"></div>
+      <div id = "airbnb1"></div>
+      <form id="hiding">
+        <div class="form-group">
+          <label>Name</label>
+          <input class="form-control" id="name" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+          <label>City</label>
+          <input class="form-control" id="city" placeholder="Enter City">
+        </div>
+        <div class="form-group">
+          <label>State</label>
+          <input class="form-control" id="state" placeholder="Enter State">
+        </div>
+        <div class="form-group">
+          <label># of Bedrooms</label>
+          <input class="form-control" id="bedroom" placeholder="Enter Number">
+        </div>
+        <div class="form-group">
+          <label># of Bathrooms</label>
+          <input class="form-control" id="bathroom" placeholder="Enter Number">
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <input class="form-control" id="description" placeholder="Enter Number">
+        </div>
+        <div class="form-group">
+          <label>Price per night</label>
+          <input class="form-control" id="price" placeholder="Enter Number">
+        </div>
+        <div class="form-group">
+          <label>Link Image of house</label>
+          <input class="form-control" id="img1" placeholder="Enter Number">
+        </div>
+        <div class="form-group">
+          <label>Link Image of house</label>
+          <input class="form-control" id="img2" placeholder="Enter Number">
+        </div>
+        <div class="form-group">
+          <label>Link Image of house</label>
+          <input class="form-control" id="img3" placeholder="Enter Number">
+        </div>
+        <div class="form-group">
+            <label>Date Avaliable</label>
+            <input class="form-control" id="date1" placeholder="Enter Number">
+          </div>
+          <div class="form-group">
+              <label>End Date</label>
+              <input class="form-control" id="date2" placeholder="Enter Number">
+            </div>
+       
+        <button type="submit" id = "newpost" class="btn btn-primary">Submit</button>
+      </form>
     </div>
   </div>
+</div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/members.js"></script>
+  <script type="text/javascript">
+
+
+  // This file just does a GET request to figure out which user is logged in
+  // and updates the HTML on the page
+  $.get("/api/user_data").then(function(data) {
+    $(".member-name").text(data.email);
+  });
+
+
+
+  
+
+      $("#newpost").on("click", function (event) {
+            console.log("working")
+            event.preventDefault();
+
+            var newPost = {
+                Name: $("#name").val().trim(),
+                City: $("#city").val().trim(),
+                State: $("#state").val().trim(),
+                BedroomNumber: $("#bedroom").val().trim(), 
+                BathroomNumber: $("#bathroom").val().trim(), 
+                Description: $("#description").val().trim(), 
+                PricePerNight: $("#price").val().trim(),
+                Img1: $("#img1").val().trim(),
+                Img2: $("#img2").val().trim(),
+                Img3: $("#img3").val().trim(),
+                StartDate: $("#date1").val().trim(),
+                EndDate: $("#date2").val().trim()
+
+            }
+
+             $("#hiding").css("display", "none")
+
+            
+
+             $.post("/api/listings", newPost)
+                .then(function (data) {
+
+                    console.log(data)
+
+                    var $div = $("<div>")
+                        $div.addClass("card")
+
+                        var $div2 = $("<div>")
+                        $div2.addClass("card-body")
+
+                        var $message = $("<h5>")
+                        $message.addClass("card-title")
+                        $message.text("Name: " +  data.Name)
+
+                        $div2.append($message)
+
+                        var $location = $("<p>")
+                        $location.addClass("card-title")
+                        $location.text("Location: " + data.City, data.State)
+
+                        $div2.append($location)
+
+                         var $description = $("<p>")
+                        $description.addClass("card-title")
+                        $description.text("Description: " + data.Description)
+
+                        $div2.append($description)
+
+                        var $price = $("<p>")
+                        $price.addClass("card-title")
+                        $price.text("Price: " + data.PricePerNight)
+
+                        $div2.append($price)
+
+                        var $updateButton = $("<button>")
+                        $updateButton.addClass("updateBtn btn btn-primary")
+                        $updateButton.text("Edit")
+                        $updateButton.attr("value", data.id)
+                        $updateButton.attr("type", "submit")
+
+                        $div2.append($updateButton)
+
+
+
+
+
+                        var $form = $("<form>")
+                          $form.addClass("hiding")
+                        var $div3 = $("<div>")
+                        $div3.addClass("form-group")
+
+                        var $label1 = $("<label>")
+                        $label1.text("Name")
+                        var $input1 = $("<input>")
+                        $input1.addClass("form-control name1")
+
+                        var $label2 = $("<label>")
+                        $label2.text("Date")
+
+                        var $input2 = $("<input>")
+                        $input2.addClass("form-control date1")
+
+                       var $label3 = $("<label>")
+                        $label3.text("Review")
+
+                        var $input3 = $("<input>")
+                        $input3.addClass("form-control review1")
+
+                        var $ratingButton = $("<button>")
+                        $ratingButton.attr("type", "submit")
+                        $ratingButton.attr("value",  data.id)
+                     
+                        $ratingButton.text("Leave Rating")
+                        $ratingButton.addClass("ratingBtn btn btn-primary")
+
+
+                        
+                        $div3.append($label1)
+                        $div3.append($input1)
+
+                        $div3.append($label2)
+                        $div3.append($input2)
+
+                        $div3.append($label3)
+                        $div3.append($input3)
+
+                        $form.append($ratingButton)
+
+                        $form.append($div3)
+
+
+                        $div.append($div2)
+                        $div.append($form)
+
+                        $("#airbnb").append($div)
+
+                })
+
+})
+
+function Rating (){
+  console.log("working")
+
+event.preventDefault();
+
+var listID = ($(this).attr("value"));
+
+            var newRating = {
+                Name: $(".name1").val().trim(),
+                Date: $(".date1").val().trim(),
+                Review: $(".review1").val().trim(),
+
+            }
+
+            
+
+
+              $(".hiding").css("display", "none")
+
+             $.post("/api/" + listID + "/ratings", newRating)
+                .then(function (data) {
+
+                  console.log(data)
+
+                        var $div = $("<div>")
+                        $div.addClass("card")
+
+                        var $div2 = $("<div>")
+                        $div2.addClass("card-body")
+
+
+                        var $nameRating = $("<p>")
+                        $nameRating.addClass("card-title")
+                        $nameRating.text("Name: " + data.Name)
+
+
+                        $div2.append($nameRating)
+
+                         var $DateRating = $("<p>")
+                        $DateRating.addClass("card-title")
+                        $DateRating.text("Date: " + data.Date)
+
+                        $div2.append($DateRating)
+
+                        var $reviewRating = $("<p>")
+                        $reviewRating.addClass("card-title")
+                        $reviewRating.text("Review: " + data.Review)
+
+                        $div2.append($reviewRating)
+
+                        $div.append($div2)
+
+                        
+                        $("#airbnb1").append($div)
+
+
+
+  })
+
+
+}
+
+$(document).on("click", ".ratingBtn", Rating);
+
+
+
+
+// function getPostData(id, type) {
+
+   
+//     $.get("/api/listings/" + id, function(data) {
+//       if (data) {
+       
+//         $("#name").val(data.Name),
+//         $("#city").val(data.City),
+//         $("#state").val(data.State),
+//         $("#bedroom").val(data.BedroomNumber),
+//         $("#bathroom").val(data.BathroomNumber),
+//         $("#description").val(data.Description),
+//         $("#price").val(data.Price),
+//         $("#img1").val(data.Img1),
+//         $("#img2").val(data.Img2),
+//         $("#img3").val(data.Img3),
+
+      
+//       }
+//     });
+//   }
+
+//  function updatePost(post) {
+//     $.ajax({
+//       method: "PUT",
+//       url: "/api/listings",
+//       data: post
+//     })
+//       .then(function() {
+//         window.location.href = "/members";
+//       });
+//   }
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+  </script>
 
 </body>
 
