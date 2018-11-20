@@ -156,7 +156,7 @@ p {
   padding: 0 8px 0 0; }
 
 .slider {
-  background: url(../images/desert.jpg) no-repeat;
+  background-image: url('../images/beach.jpg') no-repeat;
   background-size: cover;
   min-height: 800px; }
   @media (max-width: 992px) {
@@ -184,7 +184,7 @@ p {
   text-align: center; }
 
 .slider-content_wrap h5 {
-  color: lightgrey;
+  color: #336600;
   font-weight: 400;
   margin: 24px 0; }
 
@@ -246,8 +246,8 @@ p {
   font-size: 18px;
   padding: 17px;
   width: 27%;
-  background: lightblue;
-  color: black;
+  background: #336600;
+  color:white;
   border: none;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px; }
@@ -978,5 +978,9 @@ footer {
 #map {
   height: 100%;
   width: 100%; }
+
+  .hide {
+    display:none;
+  }
 
 /*# sourceMappingURL=style.css.map */

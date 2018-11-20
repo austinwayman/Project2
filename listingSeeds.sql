@@ -1,4 +1,4 @@
-INSERT INTO Listing (Name, Address, City, State, Country, BedroomNumber, BathroomNumber, Description, pricePerNight, img1, img2, img3 )
+INSERT INTO Listings (Name, Address, City, State, Country, BedroomNumber, BathroomNumber, Description, pricePerNight, img1, img2, img3, StartDate, EndDate )
 VALUES (
     "Robert Smith",
      "5212 E. Exeter Blvd",
@@ -11,7 +11,9 @@ VALUES (
      600,
      "https://img12.cinccdn.com/201809/MLS/ARMLS/709/ARMLS-RESAD-20180515145244372709000000-1.jpg",
      "https://img12.cinccdn.com/201809/MLS/ARMLS/709/ARMLS-RESAD-20180515145244372709000000-4.jpg",
-     "https://img12.cinccdn.com/201809/MLS/ARMLS/709/ARMLS-RESAD-20180515145244372709000000-6.jpg"
+     "https://img12.cinccdn.com/201809/MLS/ARMLS/709/ARMLS-RESAD-20180515145244372709000000-6.jpg",
+     2018-01-01,
+     2018-02-01,
      ),
      (
     "Johnny Applesauce",
@@ -25,7 +27,9 @@ VALUES (
      750,
      "https://img12.cinccdn.com/201808/MLS/ARMLS/970/ARMLS-RESAD-20160205173443621970000000-1.jpg",
      "https://img12.cinccdn.com/201808/MLS/ARMLS/970/ARMLS-RESAD-20160205173443621970000000-2.jpg",
-     "https://img12.cinccdn.com/201808/MLS/ARMLS/970/ARMLS-RESAD-20160205173443621970000000-7.jpg"
+     "https://img12.cinccdn.com/201808/MLS/ARMLS/970/ARMLS-RESAD-20160205173443621970000000-7.jpg",
+     2018-01-01,
+     2018-02-01,
      ),
      (  "Clint Westwood",
          "5212 E. Red Rock Dr.",
@@ -38,7 +42,9 @@ VALUES (
          499,
          "https://img12.cinccdn.com/201808/MLS/ARMLS/316/ARMLS-RESAD-20180223215428135316000000-1.jpg",
          "https://img12.cinccdn.com/201808/MLS/ARMLS/316/ARMLS-RESAD-20180223215428135316000000-4.jpg",
-         "https://img12.cinccdn.com/201808/MLS/ARMLS/316/ARMLS-RESAD-20180223215428135316000000-5.jpg"
+         "https://img12.cinccdn.com/201808/MLS/ARMLS/316/ARMLS-RESAD-20180223215428135316000000-5.jpg",
+         2018-01-01,
+     2018-02-01,
      ),
      (
          "Peter Parker",
@@ -52,7 +58,9 @@ VALUES (
          999,
          "https://ssl.cdn-redfin.com/photo/40/mbpaddedwide/078/genMid.18-386078_5.jpg",
          "https://ssl.cdn-redfin.com/photo/40/mbpaddedwide/078/genMid.18-386078_1_5.jpg",
-         "https://ssl.cdn-redfin.com/photo/40/mbpaddedwide/078/genMid.18-386078_2_5.jpg"
+         "https://ssl.cdn-redfin.com/photo/40/mbpaddedwide/078/genMid.18-386078_2_5.jpg",
+         2018-01-01,
+     2018-02-01,
      ),
      (
          "Bruce Wayne",
@@ -66,7 +74,9 @@ VALUES (
          635,
          "https://ssl.cdn-redfin.com/photo/40/mbpaddedwide/096/genMid.18-356096_5.jpg",
          "https://ssl.cdn-redfin.com/photo/40/mbpaddedwide/096/genMid.18-356096_2_5.jpg",
-         "https://ssl.cdn-redfin.com/photo/40/mbpaddedwide/096/genMid.18-356096_3_5.jpg"
+         "https://ssl.cdn-redfin.com/photo/40/mbpaddedwide/096/genMid.18-356096_3_5.jpg",
+         2018-01-01,
+     2018-02-01,
      ),
      (
          "Lisa Simpson",
@@ -80,7 +90,9 @@ VALUES (
          250,
          "https://ssl.cdn-redfin.com/photo/40/mbpaddedwide/640/genMid.18-399640_D.jpg",
          "https://ssl.cdn-redfin.com/photo/40/mbpaddedwide/640/genMid.18-399640_1_D.jpg",
-         "https://ssl.cdn-redfin.com/photo/40/mbpaddedwide/640/genMid.18-399640_9_D.jpg"
+         "https://ssl.cdn-redfin.com/photo/40/mbpaddedwide/640/genMid.18-399640_9_D.jpg",
+         2018-01-01,
+     2018-02-01,
      ),
      (
          "Margaret Churchill",
@@ -94,7 +106,9 @@ VALUES (
          375,
          "https://lc.zoocdn.com/5ec20ffbbe4f04d1d00a5fb24002172c8727d18c.jpg",
          "https://lc.zoocdn.com/b78c9b73dc0ac602aae30422ed5a2850f5a58927.jpg",
-         "https://lc.zoocdn.com/b84583ad6d0e697a2d9fcf92bc8ce84e88fdac83.jpg"
+         "https://lc.zoocdn.com/b84583ad6d0e697a2d9fcf92bc8ce84e88fdac83.jpg",
+         2018-01-01,
+     2018-02-01,
      ),
      (
          "Winston Thatcher",
@@ -108,7 +122,9 @@ VALUES (
         545,
         "https://lc.zoocdn.com/3b605bbea53e9c452ea87643b113a4d5193b5ade.jpg",
         "https://lc.zoocdn.com/49e24d03ee186d1cab55b73f9d869bfa3fabe853.jpg",
-        "https://lc.zoocdn.com/22bc2be36f92bec64d9a8391d87cc59a145e20f8.jpg"
+        "https://lc.zoocdn.com/22bc2be36f92bec64d9a8391d87cc59a145e20f8.jpg",
+        2018-01-01,
+     2018-02-01,
      ),
      (
          "Michael Caine",
@@ -122,7 +138,9 @@ VALUES (
          720,
          "https://lc.zoocdn.com/8ee4413d77f074b747cb8d97a64d8a3198210fb8.jpg",
          "https://lc.zoocdn.com/d542365cbdf707406552c7589439ff875852425b.jpg",
-         "https://lc.zoocdn.com/f7802fe4ade5c5dfc164f64a8aacb149dea97e45.jpg"
+         "https://lc.zoocdn.com/f7802fe4ade5c5dfc164f64a8aacb149dea97e45.jpg",
+         2018-01-01,
+     2018-02-01,
      ),
      (
          "Jules Baschet",
@@ -136,7 +154,9 @@ VALUES (
          540,
          "https://s4.rea.global/img/668x501-resize/realtor/fr/f3ed352305ad98541b98e41ae0e4638b.jpg",
         "https://s1.rea.global/img/668x501-resize/realtor/fr/483a6729b02c2dcb421d2f61738f6d3a.jpg",
-        "https://s4.rea.global/img/668x501-resize/realtor/fr/377a33b202ec5fc52318907b59e93427.jpg"
+        "https://s4.rea.global/img/668x501-resize/realtor/fr/377a33b202ec5fc52318907b59e93427.jpg",
+        2018-01-01,
+     2018-02-01,
      ),
      (
          "Xavier Lajoie",
@@ -150,7 +170,9 @@ VALUES (
          600,
          "https://s2.rea.global/img/668x501-resize/realtor/fr/6ee6df47abf52235fa3b32cef6feb62d.jpg",
          "https://s2.rea.global/img/668x501-resize/realtor/fr/2ff31812271d0ff56fcc16cada00c183.jpg",
-         "https://s3.rea.global/img/668x501-resize/realtor/fr/619c2e712769f75b8c406baaf790e3d5.jpg"
+         "https://s3.rea.global/img/668x501-resize/realtor/fr/619c2e712769f75b8c406baaf790e3d5.jpg",
+         2018-01-01,
+     2018-02-01,
          ),
      (
          "Thibaud Berthelot",
@@ -164,7 +186,9 @@ VALUES (
          700,
          "https://s1.rea.global/img/668x501-resize/realtor/fr/afa099305bc2fa0571d6c37ccdce8ccd.jpg",
          "https://s4.rea.global/img/668x501-resize/realtor/fr/50cddf6e77d082bb8b260aa10884abdf.jpg",
-         "https://s2.rea.global/img/668x501-resize/realtor/fr/d9af71110191daec91a10c5057381dcf.jpg"
+         "https://s2.rea.global/img/668x501-resize/realtor/fr/d9af71110191daec91a10c5057381dcf.jpg",
+         2018-01-01,
+     2018-02-01,
          ),
          (
              "Charles Kiso",
@@ -178,7 +202,9 @@ VALUES (
              500,
              "https://3b46a0786ac4679a34b7-f0d7dedfcc5b1b230b05b920cf88bb58.ssl.cf5.rackcdn.com/a10548942-condo-townhouse-q0y8ro-m.jpg",
              "https://3b46a0786ac4679a34b7-f0d7dedfcc5b1b230b05b920cf88bb58.ssl.cf5.rackcdn.com/a10548942-condo-townhouse-tw4pyi-m.jpg",
-             "https://3b46a0786ac4679a34b7-f0d7dedfcc5b1b230b05b920cf88bb58.ssl.cf5.rackcdn.com/a10548942-condo-townhouse-n284dy-m.jpg"
+             "https://3b46a0786ac4679a34b7-f0d7dedfcc5b1b230b05b920cf88bb58.ssl.cf5.rackcdn.com/a10548942-condo-townhouse-n284dy-m.jpg",
+             2018-01-01,
+     2018-02-01,
          ),
          (
              "Michael W. Darling",
@@ -192,7 +218,9 @@ VALUES (
              600,
              "https://photos.zillowstatic.com/p_h/ISat4wlmxdykbj1000000000.jpg",
              "https://photos.zillowstatic.com/p_c/ISmeprkw791hnf1000000000.jpg",
-             "https://photos.zillowstatic.com/p_f/IS6y9cwkp9hjcf1000000000.jpg"
+             "https://photos.zillowstatic.com/p_f/IS6y9cwkp9hjcf1000000000.jpg",
+             2018-01-01,
+     2018-02-01,
          ),
          (
              "Barry J. Newton",
@@ -206,7 +234,9 @@ VALUES (
              399,
              "https://photos.zillowstatic.com/p_h/ISmqunikaddqyi0000000000.jpg",
              "https://photos.zillowstatic.com/p_c/ISa5m9xlf412xg0000000000.jpg",
-             "https://photos.zillowstatic.com/p_c/IS2j7lglabssmi0000000000.jpg"
+             "https://photos.zillowstatic.com/p_c/IS2j7lglabssmi0000000000.jpg",
+             2018-01-01,
+     2018-02-01,
          ),
          (
              "Kenneth Wilson",
@@ -220,5 +250,7 @@ VALUES (
              475,
              "https://photos.zillowstatic.com/p_h/IS27qfr48p9ujz0000000000.jpg",
              "https://photos.zillowstatic.com/p_c/IS27y59ue69bwz0000000000.jpg",
-             "https://photos.zillowstatic.com/p_c/IS6ih3qersc5kz0000000000.jpg"
+             "https://photos.zillowstatic.com/p_c/IS6ih3qersc5kz0000000000.jpg",
+             2018-01-01,
+     2018-02-01,
          )
