@@ -2,6 +2,9 @@
 var db = require("../models");
 var moment = require('moment');
 var passport = require("../config/passport");
+const yelp = require('yelp-fusion'); 
+const apiKey = "9hCKvwaQl2sNmHInxGKzbzpZXCtOfxvtrxLPXfKhVfc9UZhIseffJZx586xlfpFgxMX31QwMbAkLp74ryzcxpUu5_-G8GvZbAeemncmHyrg4npAhSBGgqZU-IH_zW3Yx"
+const client = yelp.client(apiKey);
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -53,6 +56,56 @@ module.exports = function(app) {
     }
   });
 
+  app.get("/api/yelp1/:location", function(req, res){
+
+    var yelpLocation = req.params.location
+
+    client.search({
+      term:'nightlife',
+      location: yelpLocation,
+      limit:3
+    }).then(response => {
+      res.json(response);
+    }).catch(e => {
+      console.log(e);
+    })
+  
+  })
+
+  app.get("/api/yelp2/:location", function(req, res){
+
+    var yelpLocation = req.params.location
+
+    client.search({
+      term:'restaurant',
+      location: yelpLocation,
+      limit:3
+    }).then(response => {
+      res.json(response);
+    }).catch(e => {
+      console.log(e);
+    })
+  
+  })
+
+  app.get("/api/yelp3/:location", function(req, res){
+
+    var yelpLocation = req.params.location
+
+    client.search({
+      term:'mall',
+      location: yelpLocation,
+      limit:3
+    }).then(response => {
+      res.json(response);
+    }).catch(e => {
+      console.log(e);
+    })
+  
+  })
+
+
+
   
   
   
@@ -62,19 +115,22 @@ module.exports = function(app) {
       var stateLocation = req.params.state;
 
       var startDate = req.params.start;
+     
       
       var endDate = req.params.end;
 
+
       var momStart = moment("'" + startDate + "'").format("YYYY-MM-DD")
-      console.log(momStart)
+      
       
       var momEnd = moment("'" + endDate + "'").format("YYYY-MM-DD")
-      console.log(momEnd)
+ 
 
 
       db.Listing.findAll({
 
         where : {City : cityLocation,
+                Taken: false,
                 State : stateLocation,
                 StartDate: {
                   $lte: momStart
@@ -90,6 +146,24 @@ module.exports = function(app) {
       })
 
     });
+
+    app.get("/api/listings/:user", function(req, res) {
+
+      var listingUser = req.params.user
+
+      db.Listing.findAll({
+
+        where : {
+          UserId : listingUser
+              }
+
+        }).then(function(userListing) {
+          res.json(userListing);
+      })
+
+    })
+
+    
     
   
 
