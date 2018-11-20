@@ -1,6 +1,6 @@
 function createDiv() {
 
-  
+
 
     var data = {
         id:"2",
