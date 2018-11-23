@@ -14,7 +14,7 @@ module.exports = function(app) {
     // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
     // So we're sending the user back the route to the members page because the redirect will happen on the front end
     // They won't get this or even be able to access this page if they aren't authed
-    res.json("/members");
+    res.json("/mainPage");
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -147,29 +147,44 @@ module.exports = function(app) {
 
     });
 
-    app.get("/api/listings/:user", function(req, res) {
+    // app.get("/api/listings/", function(req, res) {
 
-      var listingUser = req.params.user
+    //   var listingUser = req.params.user
 
-      db.Listing.findAll({
+    //   db.Listing.findAll({
 
-        where : {
-          UserId : listingUser
-              }
+    // }).then(function(userListing) {
+    //       res.json(userListing);
+    //   })
 
-        }).then(function(userListing) {
-          res.json(userListing);
+    // })
+
+    app.get("/api/listing/:id", function (req, res){
+
+      db.Listing.findOne({
+        where:{ 
+          id: req.params.id
+        }
+       
+      }).then(function(moreInfo){
+
+        console.log(listId)
+        res.json(moreInfo)
+      
       })
+
+
 
     })
 
-    
+
     
   
 
   app.post("/api/listings", function(req, res){
 
     let data = {...req.body};
+
     data.UserId = req.user.id;
   
     db.Listing.create(data).then(function(dbListing) {

@@ -28,10 +28,22 @@
       <div id = "airbnb"></div>
       <div id = "airbnb1"></div>
       <form id="hiding">
+          <div class="form-group">
+              <label>Listing Name</label>
+              <input class="form-control" id="listname" placeholder="Enter Name">
+            </div>
         <div class="form-group">
           <label>Name</label>
           <input class="form-control" id="name" placeholder="Enter Name">
         </div>
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input class="form-control" id="phone" placeholder="Enter Name">
+          </div>
+          <div class="form-group">
+              <label>Email</label>
+              <input class="form-control" id="email" placeholder="Enter Name">
+            </div>
         <div class="form-group">
           <label>City</label>
           <input class="form-control" id="city" placeholder="Enter City">
@@ -102,7 +114,10 @@
             event.preventDefault();
 
             var newPost = {
-                Name: $("#name").val().trim(),
+                listingName: $("#listname").val().trim(),
+                listerName: $("#name").val().trim(),
+                phoneNumber: $("#phone").val().trim(),
+                email:$("#email").val().trim(),
                 City: $("#city").val().trim(),
                 State: $("#state").val().trim(),
                 BedroomNumber: $("#bedroom").val().trim(), 
