@@ -1,162 +1,211 @@
 <div class="dark-bg sticky-top">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html">Listing</a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="icon-menu"></span>
-                        </button>
-                        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                            <ul class="navbar-nav">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        Explore
-                                        <span class="icon-arrow-down"></span>
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#">About Us</a>
-                                </li>
-                                <li><a href="#" class="btn btn-outline-light top-btn"><span class="ti-plus"></span>
-                                        Add Listing</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- END HEADER -->
-
-
-    <!--============================= BOOKING =============================-->
-    <div>
-        <!-- Swiper -->
-        <div class="container">
-            <div class="row">
-
-                <div class="col col-xl-4">
-                  
-                        <img src={{listings.Img1}} class="img-fluid" alt="#">
-         
-                </div>
-                  <div class="col col-xl-4">
-                  
-                        <img src={{listings.Img2}} class="img-fluid" alt="#">
-         
-                </div>
-                 <div class="col col-xl-4">
-                  
-                        <img src={{listings.Img3}} class="img-fluid" alt="#">
-         
-                </div>
-             
-            </div>
-          
-        </div>
-    </div>
-    <!--//END BOOKING -->
-
-
-    <!--============================= DETAILS =============================-->
-    <section class="light-bg booking-details_wrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 responsive-wrap">
-                    <div class="booking-checkbox_wrap row">
-                        <div class="col-md-6">
-                            <h3>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <span class="navbar-brand"> Listing </span>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-menu"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
                         
-                                {{listings.listingName}}
-                            </h3>
-                            <ul>
-                                <li class="list-item">
-                                     Bedrooms: {{listings.BedroomNumber}}
-                                </li>
-                                <li class="list-item">
-                                    Bathrooms: {{listings.BathroomNumber}}
-                                </li>
-                                <li class="list-item">
-                                    ${{listings.PricePerNight}}/night
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <h3>
-                                Details
-                            </h3>
-                            <p>
-                                {{listings.Description}}
-                            </p>
-                        </div>
+                             
+                            <li><a href="/mainPage" class="btn btn-outline-light top-btn">
+                                    Main Page</a></li>
+                        </ul>
                     </div>
-                </div>
+                </nav>
             </div>
         </div>
-    </section>
+    </div>
+</div>
 
 
-    <section class="light-bg booking-details_wrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 responsive-wrap">
-                    <div class="booking-checkbox_wrap">
-                        <div class="booking-checkbox_wrap">
-                            <h3 class="text-center">
-                                Contact Info
-                            </h3>
-                            <hr>
-                            <ul>
-                                <li class="list-item">
-                                    Name: {{listings.listingName}}
-                                </li>
-                                <li class="list-item">
-                                    Phone Number: {{listings.phoneNumber}}
-                                </li>
-                                <li class="list-item">
-                                    Email: {{listings.email}}
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+<!-- END HEADER -->
+
+
+<!--============================= BOOKING =============================-->
+<div>
+    <!-- Swiper -->
+    <div class="container">
+        <div class="row">
+
+            <div class="col col-xl-4">
+
+                <img src={{listings.Img1}} class="img-fluid" alt="#">
+
             </div>
+            <div class="col col-xl-4">
+
+                <img src={{listings.Img2}} class="img-fluid" alt="#">
+
+            </div>
+            <div class="col col-xl-4">
+
+                <img src={{listings.Img3}} class="img-fluid" alt="#">
+
+            </div>
+
         </div>
-    </section>
-    <!-- end details -->
+
+    </div>
+</div>
+<!--//END BOOKING -->
 
 
+<!--============================= DETAILS =============================-->
+<section class="light-bg booking-details_wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 responsive-wrap">
+                <div class="booking-checkbox_wrap row">
+                    <div class="col-md-6">
+                        <h3>
 
- <!--============================= FOOTER =============================-->
- <footer class="main-block dark-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="copyright">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <p>Copyright &copy; 2018 Wanderlust. All rights reserved</p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            {{listings.listingName}}
+                        </h3>
                         <ul>
-                            <li><a href="#"><span class="ti-facebook"></span></a></li>
-                            <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
-                            <li><a href="#"><span class="ti-instagram"></span></a></li>
+                            <li class="list-item">
+                                Bedrooms: {{listings.BedroomNumber}}
+                            </li>
+                            <li class="list-item">
+                                Bathrooms: {{listings.BathroomNumber}}
+                            </li>
+                            <li class="list-item">
+                                ${{listings.PricePerNight}}/night
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>
+                            Details
+                        </h3>
+                        <p>
+                            {{listings.Description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="light-bg booking-details_wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 responsive-wrap">
+                <div class="booking-checkbox_wrap">
+                    <div class="booking-checkbox_wrap">
+                        <h3 class="text-center">
+                            Contact Info
+                        </h3>
+                        <hr>
+                        <ul>
+                            <li class="list-item">
+                                Name: {{listings.listingName}}
+                            </li>
+                            <li class="list-item">
+                                Phone Number: {{listings.phoneNumber}}
+                            </li>
+                            <li class="list-item">
+                                Email: {{listings.email}}
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <!--//END FOOTER -->
+    </div>
+</section>
+<!-- end details -->
+
+<section class="light-bg booking-details_wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 responsive-wrap">
+                <div class="booking-checkbox_wrap">
+                    <div class="booking-checkbox_wrap">
+                        <div id="results"></div>
+                        <h3 class="text-center">
+                            Leave Your Review Here
+                        </h3>
+                        <form>
+                            <div class="form-group">
+                                <label>Name:</label>
+                                <input class="form-control" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label>Date:</label>
+                                <input class="form-control" id="date">
+                            </div>
+                            <div class="form-group">
+                                <label>Review:</label>
+                                <textarea class="form-control" id="review" rows="5"> </textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary ratingBtn" value={{listings.id}}>Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</section>
+
+<div class="container">
+
+    
+
+{{#each listings.Ratings}}
+
+<h3 class="text-center">
+                          Reviews
+                        </h3>
+
+
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{Name}}</h5>
+         <h5 class="card-title">{{Date}}</h5>
+          <h5 class="card-title">{{Review}}</h5>
+    </div>
+</div>
+
+
+{{/each}}
+
+</div>
+    
+    
+
+
+
+
+
+
+<!--============================= FOOTER =============================-->
+<footer class="main-block dark-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="copyright">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <p>Copyright &copy; 2018 Wanderlust. All rights reserved</p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <ul>
+                        <li><a href="#"><span class="ti-facebook"></span></a></li>
+                        <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+                        <li><a href="#"><span class="ti-instagram"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--//END FOOTER -->
 
 
 
@@ -167,60 +216,75 @@
 
 
 
-    <!-- jQuery, Bootstrap JS. -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!-- jQuery, Bootstrap JS. -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 3,
-            slidesPerGroup: 3,
-            loop: true,
-            loopFillGroupWithBlank: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
+<script>
+    if ($('.image-link').length) {
+        $('.image-link').magnificPopup({
+            type: 'image',
+            gallery: {
+                enabled: true
+            }
         });
-    </script>
-    <script>
-        if ($('.image-link').length) {
-            $('.image-link').magnificPopup({
-                type: 'image',
-                gallery: {
-                    enabled: true
-                }
-            });
-        }
-        if ($('.image-link2').length) {
-            $('.image-link2').magnificPopup({
-                type: 'image',
-                gallery: {
-                    enabled: true
-                }
-            });
-        }
-    </script>
+    }
+    if ($('.image-link2').length) {
+        $('.image-link2').magnificPopup({
+            type: 'image',
+            gallery: {
+                enabled: true
+            }
+        });
+    }
+</script>
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
-    $( document ).ready(function() {
+    function Rating(){
 
-      
-        console.log("working")
-        
-       
+         event.preventDefault();
 
-    
+        var newRating = {
+        Name: $("#name").val().trim(),
+        Date: $("#date").val().trim(),
+        Review: $("#review").val().trim(),
+
+      }
 
 
+        var listID = ($(this).attr("value"));
+
+        $.post("/api/" + listID + "/ratings", newRating)
+            .then(function (data) {
+
+                $("#results").text("Your Review was posted sucessfully!")
+
+            })
+
+    }
 
 
-    })
 
-    
+    $(document).on("click", ".ratingBtn", Rating);
 
-    </script>
+
+
+
+
+</script>

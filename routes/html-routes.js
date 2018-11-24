@@ -43,7 +43,8 @@ module.exports = function (app) {
     db.Listing.findOne({
       where: {
         id: req.params.id
-      }
+      },
+      include: [db.Rating]
     }).then(function (moreInfo) {
 
       res.render("listing", { listings: moreInfo })

@@ -2,352 +2,184 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Colorlib">
+  <meta name="description" content="#">
+  <meta name="keywords" content="#">
+  <!-- Page Title -->
+  <title>Wanderlust</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/stylesheets/bootstarp.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
+  <!-- Simple line Icon -->
+  <link rel="stylesheet" href="/stylesheets/simple-line-icons.css">
+  <!-- Themify Icon -->
+  <link rel="stylesheet" href="/stylesheets/themify-icons.css">
+  <!-- Hover Effects -->
+  <link rel="stylesheet" href="/stylesheets/set1.css">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/stylesheets/style.css">
+
+  <script src="/js/jquery-3.2.1.min.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <!-- Magnific popup JS -->
+  <script src="/js/jquery.magnific-popup.js"></script>
+  <!-- Swipper Slider JS -->
+  <script src="/js/swiper.min.js"></script>
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/logout">
-        Logout
-      </a>
-      <a class="navbar-brand" href="/main">
-        Index
-      </a>
+  <div class="dark-bg sticky-top">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <span class="navbar-brand">Add Your Listing</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="icon-menu"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                   <li><a href="/mainPage" class="btn btn-outline-light top-btn"><span class="ti-plus"></span>
+                              Back To Main Page</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
     </div>
   </div>
-</nav>
-<div class="container">
-  <div class="row">
-    <div class="col col-xl-12">
-      <div id = "airbnb"></div>
-      <div id = "airbnb1"></div>
-      <form id="hiding">
+  <div class="container">
+    <div class="row">
+      <div class="col col-xl-12">
+        <div id="success"></div>
+        <div id="results"></div>
+       
+
+        <form id="hiding">
           <div class="form-group">
-              <label>Listing Name</label>
-              <input class="form-control" id="listname" placeholder="Enter Name">
-            </div>
-        <div class="form-group">
-          <label>Name</label>
-          <input class="form-control" id="name" placeholder="Enter Name">
-        </div>
-        <div class="form-group">
+            <label>Listing Name</label>
+            <input class="form-control" id="listname" placeholder="Enter Name">
+          </div>
+          <div class="form-group">
+            <label>Name</label>
+            <input class="form-control" id="name" placeholder="Enter Name">
+          </div>
+          <div class="form-group">
             <label>Phone Number</label>
             <input class="form-control" id="phone" placeholder="Enter Name">
           </div>
           <div class="form-group">
-              <label>Email</label>
-              <input class="form-control" id="email" placeholder="Enter Name">
-            </div>
-        <div class="form-group">
-          <label>City</label>
-          <input class="form-control" id="city" placeholder="Enter City">
-        </div>
-        <div class="form-group">
-          <label>State</label>
-          <input class="form-control" id="state" placeholder="Enter State">
-        </div>
-        <div class="form-group">
-          <label># of Bedrooms</label>
-          <input class="form-control" id="bedroom" placeholder="Enter Number">
-        </div>
-        <div class="form-group">
-          <label># of Bathrooms</label>
-          <input class="form-control" id="bathroom" placeholder="Enter Number">
-        </div>
-        <div class="form-group">
-          <label>Description</label>
-          <input class="form-control" id="description" placeholder="Enter Number">
-        </div>
-        <div class="form-group">
-          <label>Price per night</label>
-          <input class="form-control" id="price" placeholder="Enter Number">
-        </div>
-        <div class="form-group">
-          <label>Link Image of house</label>
-          <input class="form-control" id="img1" placeholder="Enter Number">
-        </div>
-        <div class="form-group">
-          <label>Link Image of house</label>
-          <input class="form-control" id="img2" placeholder="Enter Number">
-        </div>
-        <div class="form-group">
-          <label>Link Image of house</label>
-          <input class="form-control" id="img3" placeholder="Enter Number">
-        </div>
-        <div class="form-group">
+            <label>Email</label>
+            <input class="form-control" id="email" placeholder="Enter Name">
+          </div>
+          <div class="form-group">
+            <label>City</label>
+            <input class="form-control" id="city" placeholder="Enter City">
+          </div>
+          <div class="form-group">
+            <label>State</label>
+            <input class="form-control" id="state" placeholder="Enter State">
+          </div>
+          <div class="form-group">
+            <label># of Bedrooms</label>
+            <input class="form-control" id="bedroom" placeholder="Enter Number">
+          </div>
+          <div class="form-group">
+            <label># of Bathrooms</label>
+            <input class="form-control" id="bathroom" placeholder="Enter Number">
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <input class="form-control" id="description" placeholder="Enter Number">
+          </div>
+          <div class="form-group">
+            <label>Price per night</label>
+            <input class="form-control" id="price" placeholder="Enter Number">
+          </div>
+          <div class="form-group">
+            <label>Link Image of house</label>
+            <input class="form-control" id="img1" placeholder="Enter Number">
+          </div>
+          <div class="form-group">
+            <label>Link Image of house</label>
+            <input class="form-control" id="img2" placeholder="Enter Number">
+          </div>
+          <div class="form-group">
+            <label>Link Image of house</label>
+            <input class="form-control" id="img3" placeholder="Enter Number">
+          </div>
+          <div class="form-group">
             <label>Date Avaliable</label>
             <input class="form-control" id="date1" placeholder="Enter Number">
           </div>
           <div class="form-group">
-              <label>End Date</label>
-              <input class="form-control" id="date2" placeholder="Enter Number">
-            </div>
-       
-        <button type="submit" id = "newpost" class="btn btn-primary">Submit</button>
-      </form>
+            <label>End Date</label>
+            <input class="form-control" id="date2" placeholder="Enter Number">
+          </div>
+
+          <button type="submit" id="newpost" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
     </div>
   </div>
-</div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
 
+    $("#newpost").on("click", function (event) {
+      console.log("working")
+      event.preventDefault();
 
-  // This file just does a GET request to figure out which user is logged in
-  // and updates the HTML on the page
-  $.get("/api/user_data").then(function(data) {
-    $(".member-name").text(data.email);
-  });
+      var newPost = {
+        listingName: $("#listname").val().trim(),
+        listerName: $("#name").val().trim(),
+        phoneNumber: $("#phone").val().trim(),
+        email: $("#email").val().trim(),
+        City: $("#city").val().trim(),
+        State: $("#state").val().trim(),
+        BedroomNumber: $("#bedroom").val().trim(),
+        BathroomNumber: $("#bathroom").val().trim(),
+        Description: $("#description").val().trim(),
+        PricePerNight: $("#price").val().trim(),
+        Img1: $("#img1").val().trim(),
+        Img2: $("#img2").val().trim(),
+        Img3: $("#img3").val().trim(),
+        StartDate: $("#date1").val().trim(),
+        EndDate: $("#date2").val().trim()
 
+      }
 
+      $("#hiding").css("display", "none")
 
-  
 
-      $("#newpost").on("click", function (event) {
-            console.log("working")
-            event.preventDefault();
 
-            var newPost = {
-                listingName: $("#listname").val().trim(),
-                listerName: $("#name").val().trim(),
-                phoneNumber: $("#phone").val().trim(),
-                email:$("#email").val().trim(),
-                City: $("#city").val().trim(),
-                State: $("#state").val().trim(),
-                BedroomNumber: $("#bedroom").val().trim(), 
-                BathroomNumber: $("#bathroom").val().trim(), 
-                Description: $("#description").val().trim(), 
-                PricePerNight: $("#price").val().trim(),
-                Img1: $("#img1").val().trim(),
-                Img2: $("#img2").val().trim(),
-                Img3: $("#img3").val().trim(),
-                StartDate: $("#date1").val().trim(),
-                EndDate: $("#date2").val().trim()
+      $.post("/api/listings", newPost)
+        .then(function (data) {
 
-            }
+          console.log(data)
 
-             $("#hiding").css("display", "none")
+          $("#success").text("Your listing was posted successfully!")
 
-            
+          var $backBtn = $("<button>")
+          $backBtn.addClass("btn btn-primary")
+          var mainLink = $("<a>")
+          mainLink.attr("href", "/mainPage")
 
-             $.post("/api/listings", newPost)
-                .then(function (data) {
+          $backBtn.append(mainLink)
 
-                    console.log(data)
+          $("#results").append($backBtn)
 
-                    var $div = $("<div>")
-                        $div.addClass("card")
 
-                        var $div2 = $("<div>")
-                        $div2.addClass("card-body")
+        })
 
-                        var $message = $("<h5>")
-                        $message.addClass("card-title")
-                        $message.text("Name: " +  data.Name)
-
-                        $div2.append($message)
-
-                        var $location = $("<p>")
-                        $location.addClass("card-title")
-                        $location.text("Location: " + data.City, data.State)
-
-                        $div2.append($location)
-
-                         var $description = $("<p>")
-                        $description.addClass("card-title")
-                        $description.text("Description: " + data.Description)
-
-                        $div2.append($description)
-
-                        var $price = $("<p>")
-                        $price.addClass("card-title")
-                        $price.text("Price: " + data.PricePerNight)
-
-                        $div2.append($price)
-
-                        var $updateButton = $("<button>")
-                        $updateButton.addClass("updateBtn btn btn-primary")
-                        $updateButton.text("Edit")
-                        $updateButton.attr("value", data.id)
-                        $updateButton.attr("type", "submit")
-
-                        $div2.append($updateButton)
-
-
-
-
-
-                        var $form = $("<form>")
-                          $form.addClass("hiding")
-                        var $div3 = $("<div>")
-                        $div3.addClass("form-group")
-
-                        var $label1 = $("<label>")
-                        $label1.text("Name")
-                        var $input1 = $("<input>")
-                        $input1.addClass("form-control name1")
-
-                        var $label2 = $("<label>")
-                        $label2.text("Date")
-
-                        var $input2 = $("<input>")
-                        $input2.addClass("form-control date1")
-
-                       var $label3 = $("<label>")
-                        $label3.text("Review")
-
-                        var $input3 = $("<input>")
-                        $input3.addClass("form-control review1")
-
-                        var $ratingButton = $("<button>")
-                        $ratingButton.attr("type", "submit")
-                        $ratingButton.attr("value",  data.id)
-                     
-                        $ratingButton.text("Leave Rating")
-                        $ratingButton.addClass("ratingBtn btn btn-primary")
-
-
-                        
-                        $div3.append($label1)
-                        $div3.append($input1)
-
-                        $div3.append($label2)
-                        $div3.append($input2)
-
-                        $div3.append($label3)
-                        $div3.append($input3)
-
-                        $form.append($ratingButton)
-
-                        $form.append($div3)
-
-
-                        $div.append($div2)
-                        $div.append($form)
-
-                        $("#airbnb").append($div)
-
-                })
-
-})
-
-function Rating (){
-  console.log("working")
-
-event.preventDefault();
-
-var listID = ($(this).attr("value"));
-
-            var newRating = {
-                Name: $(".name1").val().trim(),
-                Date: $(".date1").val().trim(),
-                Review: $(".review1").val().trim(),
-
-            }
-
-            
-
-
-              $(".hiding").css("display", "none")
-
-             $.post("/api/" + listID + "/ratings", newRating)
-                .then(function (data) {
-
-                  console.log(data)
-
-                        var $div = $("<div>")
-                        $div.addClass("card")
-
-                        var $div2 = $("<div>")
-                        $div2.addClass("card-body")
-
-
-                        var $nameRating = $("<p>")
-                        $nameRating.addClass("card-title")
-                        $nameRating.text("Name: " + data.Name)
-
-
-                        $div2.append($nameRating)
-
-                         var $DateRating = $("<p>")
-                        $DateRating.addClass("card-title")
-                        $DateRating.text("Date: " + data.Date)
-
-                        $div2.append($DateRating)
-
-                        var $reviewRating = $("<p>")
-                        $reviewRating.addClass("card-title")
-                        $reviewRating.text("Review: " + data.Review)
-
-                        $div2.append($reviewRating)
-
-                        $div.append($div2)
-
-                        
-                        $("#airbnb1").append($div)
-
-
-
-  })
-
-
-}
-
-$(document).on("click", ".ratingBtn", Rating);
-
-
-
-
-// function getPostData(id, type) {
-
-   
-//     $.get("/api/listings/" + id, function(data) {
-//       if (data) {
-       
-//         $("#name").val(data.Name),
-//         $("#city").val(data.City),
-//         $("#state").val(data.State),
-//         $("#bedroom").val(data.BedroomNumber),
-//         $("#bathroom").val(data.BathroomNumber),
-//         $("#description").val(data.Description),
-//         $("#price").val(data.Price),
-//         $("#img1").val(data.Img1),
-//         $("#img2").val(data.Img2),
-//         $("#img3").val(data.Img3),
-
-      
-//       }
-//     });
-//   }
-
-//  function updatePost(post) {
-//     $.ajax({
-//       method: "PUT",
-//       url: "/api/listings",
-//       data: post
-//     })
-//       .then(function() {
-//         window.location.href = "/members";
-//       });
-//   }
-
- 
-
-
-
-
-
-
-
-
-
-
+    })
 
   </script>
 

@@ -168,7 +168,7 @@ module.exports = function(app) {
        
       }).then(function(moreInfo){
 
-        console.log(listId)
+
         res.json(moreInfo)
       
       })
@@ -210,12 +210,12 @@ module.exports = function(app) {
 
 
    
-  app.put("/api/listings", function(req, res) {
+  app.put("/api/listing/:id", function(req, res) {
     db.Listing.update(
       req.body,
       {
         where: {
-          id: req.body.id
+          id: req.params.id
         }
       }).then(function(dbListing) {
       res.json(dbListing);
@@ -225,15 +225,15 @@ module.exports = function(app) {
 
 
 
-  // app.delete("/api/listings/:id", function(req, res) {
-  //   db.Post.destroy({
-  //     where: {
-  //       id: req.params.id
-  //     }
-  //   }).then(function(dbPost) {
-  //     res.json(dbPost);
-  //   });
-  // });
+  app.delete("/api/listings/:id", function(req, res) {
+    db.Listing.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(deleted) {
+      res.json(deleted);
+    });
+  });
 
   
 

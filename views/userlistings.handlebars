@@ -10,23 +10,10 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                         <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    Explore
-                                    <span class="icon-arrow-down"></span>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">About Us</a>
-                            </li>
-                            <li><a href="#" class="btn btn-outline-light top-btn"><span class="ti-plus"></span>
-                                    Add Listing</a></li>
+                        
+                      
+                            <li><a href="/mainPage" class="btn btn-outline-light top-btn"></span>
+                                    Main Page</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -38,22 +25,33 @@
 
 
 
-<ul>
-
-    {{#each listingUser}}
-
-    <li>
-
-        {{listingName}}
-{{email}}
 
 
-    </li>
+{{#each listingUser}}
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{listingName}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{City}}, {{State}}</h6>
+        <p class="card-text">{{Description}}</p>
+        <button class="btn btn-primary editBtn" value={{id}}> Edit </button>
+
+        <button class="btn btn-primary deleteBtn" value={{id}}> Delete </button>
+    </div>
+</div>
+
+<div id="editForm"></div>
 
 
-    {{/each}}
 
-</ul>
+
+
+
+
+
+{{/each}}
+
+
 
 
 
@@ -108,19 +106,288 @@
 
 <script type="text/javascript">
 
-    $(document).ready(function () {
+    $(".deleteBtn").on("click", function () {
+
+        var deleteID = ($(this).attr("value"))
+
+        $.ajax({
+            method: "DELETE",
+            url: "/api/listings/" + deleteID
+        })
+            .then(function (data) {
+
+                console.log(data)
+
+            });
+
+    });
+
+    $(".editBtn").on("click", function () {
 
 
-        console.log("working")
+        var $form = $("<form>")
+
+        $form.addClass("hiding")
+
+        var $div = $("<div>")
+        $div.addClass("form-group")
+        var $label1 = $("<label>")
+        $label1.text("Listing Name")
+        var $input1 = $("<input>")
+        $input1.addClass("form-control listname")
+        $div.append($label1)
+        $div.append($input1)
+        $form.append($div)
 
 
+        var $div2 = $("<div>")
+        $div2.addClass("form-group")
+        var $label2 = $("<label>")
+        $label2.text("Name")
+        var $input2 = $("<input>")
+        $input2.addClass("form-control name")
+        $div2.append($label2)
+        $div2.append($input2)
+        $form.append($div2)
+
+        var $div3 = $("<div>")
+        $div3.addClass("form-group")
+        var $label3 = $("<label>")
+        $label3.text("Phone Number")
+        var $input3 = $("<input>")
+        $input3.addClass("form-control phone")
+        $div3.append($label3)
+        $div3.append($input3)
+        $form.append($div3)
+
+        var $div4 = $("<div>")
+        $div4.addClass("form-group")
+        var $label4 = $("<label>")
+        $label4.text("Email")
+        var $input4 = $("<input>")
+        $input4.addClass("form-control email")
+        $div4.append($label4)
+        $div4.append($input4)
+        $form.append($div4)
+
+        var $div5 = $("<div>")
+        $div5.addClass("form-group")
+        var $label5 = $("<label>")
+        $label5.text("City")
+        var $input5 = $("<input>")
+        $input5.addClass("form-control city")
+        $div5.append($label5)
+        $div5.append($input5)
+        $form.append($div5)
+
+        var $div6 = $("<div>")
+        $div6.addClass("form-group")
+        var $label6 = $("<label>")
+        $label6.text("State")
+        var $input6 = $("<input>")
+        $input6.addClass("form-control state")
+        $div6.append($label6)
+        $div6.append($input6)
+        $form.append($div6)
+
+        var $div7 = $("<div>")
+        $div7.addClass("form-group")
+        var $label7 = $("<label>")
+        $label7.text("Number of Bedrooms")
+        var $input7 = $("<input>")
+        $input7.addClass("form-control bedroom")
+        $div7.append($label7)
+        $div7.append($input7)
+        $form.append($div7)
+
+        var $div8 = $("<div>")
+        $div8.addClass("form-group")
+        var $label8 = $("<label>")
+        $label8.text("Number of Bathrooms")
+        var $input8 = $("<input>")
+        $input8.addClass("form-control bathroom")
+        $div8.append($label8)
+        $div8.append($input8)
+        $form.append($div8)
+
+        var $div9 = $("<div>")
+        $div9.addClass("form-group")
+        var $label9 = $("<label>")
+        $label9.text("Description")
+        var $input9 = $("<input>")
+        $input9.addClass("form-control description")
+        $div9.append($label9)
+        $div9.append($input9)
+        $form.append($div9)
+
+        var $div10 = $("<div>")
+        $div10.addClass("form-group")
+        var $label10 = $("<label>")
+        $label10.text("Price Per Night")
+        var $input10 = $("<input>")
+        $input10.addClass("form-control price")
+        $div10.append($label10)
+        $div10.append($input10)
+        $form.append($div10)
+
+        var $div11 = $("<div>")
+        $div11.addClass("form-group")
+        var $label11 = $("<label>")
+        $label11.text("Link of Image")
+        var $input11 = $("<input>")
+        $input11.addClass("form-control img1")
+        $div11.append($label11)
+        $div11.append($input11)
+        $form.append($div11)
+
+        var $div12 = $("<div>")
+        $div12.addClass("form-group")
+        var $label12 = $("<label>")
+        $label12.text("Link of Image")
+        var $input12 = $("<input>")
+        $input12.addClass("form-control img2")
+        $div12.append($label12)
+        $div12.append($input12)
+        $form.append($div12)
+
+        var $div13 = $("<div>")
+        $div13.addClass("form-group")
+        var $label13 = $("<label>")
+        $label13.text("Link of Image")
+        var $input13 = $("<input>")
+        $input13.addClass("form-control img3")
+        $div13.append($label13)
+        $div13.append($input13)
+        $form.append($div13)
+
+        var $div14 = $("<div>")
+        $div14.addClass("form-group")
+        var $label14 = $("<label>")
+        $label14.text("Date Avaliable")
+        var $input14 = $("<input>")
+        $input14.addClass("form-control date1")
+        $div14.append($label14)
+        $div14.append($input14)
+        $form.append($div14)
+
+        var $div15 = $("<div>")
+        $div15.addClass("form-group")
+        var $label15 = $("<label>")
+        $label15.text("End Date")
+        var $input15 = $("<input>")
+        $input15.addClass("form-control date2")
+        $div15.append($label15)
+        $div15.append($input15)
+        $form.append($div15)
+
+        var editID = ($(this).attr("value"))
+
+        var $editButton = $("<button>")
+        $editButton.attr("type", "submit")
+         $editButton.attr("value", editID)
+        $editButton.text("Submit")
+        $editButton.addClass("updateBtn btn btn-primary")
 
 
+        $form.append($editButton)
+
+        $("#editForm").append($form)
 
 
+        $.get("/api/listing/" + editID, function (data) {
+
+            if (data) {
+                console.log(data.id);
+
+                $(".listname").val(data.listingName);
+                $(".name").val(data.listerName);
+                $(".phone").val(data.phoneNumber);
+                $(".email").val(data.email);
+                $(".city").val(data.City);
+                $(".state").val(data.State);
+                $(".bedroom").val(data.BedroomNumber);
+                $(".bathroom").val(data.BathroomNumber);
+                $(".description").val(data.Description);
+                $(".price").val(data.PricePerNight);
+                $(".img1").val(data.Img1);
+                $(".img2").val(data.Img2);
+                $(".img3").val(data.Img3);
+                $(".date1").val(data.StartDate);
+                $(".date2").val(data.EndDate);
+
+
+            }
+        });
 
 
     })
+
+    function updateListing () {
+
+         $(".hiding").css("display", "none")
+
+        var editID = ($(this).attr("value"))
+
+
+
+        event.preventDefault();
+
+            var updatePost = {
+                listingName: $(".listname").val().trim(),
+                listerName: $(".name").val().trim(),
+                phoneNumber: $(".phone").val().trim(),
+                email:$(".email").val().trim(),
+                City: $(".city").val().trim(),
+                State: $(".state").val().trim(),
+                BedroomNumber: $(".bedroom").val().trim(), 
+                BathroomNumber: $(".bathroom").val().trim(), 
+                Description: $(".description").val().trim(), 
+                PricePerNight: $(".price").val().trim(),
+                Img1: $(".img1").val().trim(),
+                Img2: $(".img2").val().trim(),
+                Img3: $(".img3").val().trim(),
+                StartDate: $(".date1").val().trim(),
+                EndDate: $(".date2").val().trim()
+
+            }
+
+ 
+
+             $.ajax({
+                 method: "PUT",
+
+                 url : "/api/listing/" + editID,
+
+                 data : updatePost
+
+             })
+                .then(function (data) {
+
+                    console.log(data)
+
+            })
+
+    }
+
+    $(document).on("click", ".updateBtn", updateListing);
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
