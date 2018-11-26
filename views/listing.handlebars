@@ -1,0 +1,372 @@
+<div class="dark-bg sticky-top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <span class="navbar-brand"> Listing </span>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-menu"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                        
+                             
+                            <li><a href="/mainPage" class="btn btn-outline-light top-btn">
+                                    Main Page</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- END HEADER -->
+
+
+<!--============================= BOOKING =============================-->
+<div>
+    <!-- Swiper -->
+    <div class="container">
+        <div class="row">
+
+            <div class="col col-xl-4">
+
+                <img src={{listings.Img1}} class="img-fluid" alt="#">
+
+            </div>
+            <div class="col col-xl-4">
+
+                <img src={{listings.Img2}} class="img-fluid" alt="#">
+
+            </div>
+            <div class="col col-xl-4">
+
+                <img src={{listings.Img3}} class="img-fluid" alt="#">
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!--//END BOOKING -->
+
+
+<!--============================= DETAILS =============================-->
+<section class="light-bg booking-details_wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 responsive-wrap">
+                <div class="booking-checkbox_wrap row">
+                    <div class="col-md-6">
+                        <h3>
+
+                            {{listings.listingName}}
+                        </h3>
+                        <ul>
+                            <li class="list-item">
+                                Bedrooms: {{listings.BedroomNumber}}
+                            </li>
+                            <li class="list-item">
+                                Bathrooms: {{listings.BathroomNumber}}
+                            </li>
+                            <li class="list-item">
+                                ${{listings.PricePerNight}}/night
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>
+                            Details
+                        </h3>
+                        <p>
+                            {{listings.Description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="light-bg booking-details_wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 responsive-wrap">
+                <div class="booking-checkbox_wrap">
+                    <div class="booking-checkbox_wrap">
+                        <h3 class="text-center">
+                            Contact Info
+                        </h3>
+                        <hr>
+                        <ul>
+                            <li class="list-item">
+                                Name: {{listings.listingName}}
+                            </li>
+                            <li class="list-item">
+                                Phone Number: {{listings.phoneNumber}}
+                            </li>
+                            <li class="list-item">
+                                Email: {{listings.email}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end details -->
+
+<section class="light-bg booking-details_wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 responsive-wrap">
+                <div class="booking-checkbox_wrap">
+                    <div class="booking-checkbox_wrap">
+                        <div id="results"></div>
+                        <h3 class="text-center">
+                            Leave Your Review Here
+                        </h3>
+                        <form>
+                            <div class="form-group">
+                                <label>Name:</label>
+                                <input class="form-control" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label>Date:</label>
+                                <input class="form-control" id="date">
+                            </div>
+                            <div class="form-group">
+                                <label>Review:</label>
+                                <textarea class="form-control" id="review" rows="5"> </textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary ratingBtn" value={{listings.id}}>Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</section>
+
+<div class="container">
+
+    
+
+{{#each listings.Ratings}}
+
+<h3 class="text-center">
+                          Reviews
+                        </h3>
+
+
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{Name}}</h5>
+         <h5 class="card-title">{{Date}}</h5>
+          <h5 class="card-title">{{Review}}</h5>
+    </div>
+</div>
+
+
+{{/each}}
+
+</div>
+
+
+<!--============================= Socket =============================-->
+
+<div class="container">
+        <div id="userFormArea" class="row">
+            <div class="col-md-12">
+                    <form id="userForm">
+                            <div class="form-group">
+                                <label>Enter Username</label>
+                                <input class="form-control" id="username"/>
+                                <br />
+                                <input type="submit" class="btn btn-primary" value="Login" />
+                            </div>
+                        </form>
+
+            </div>
+        </div>
+        <div id="messageArea" class="row" 
+           style="display: none" >
+            <div class="col-md-4">
+                <div class="well">
+                    <h3>Online Users</h3>
+                    <ul class="list-group" id="users"></ul>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="chat" id="chat"></div>
+                    <form id="messageForm">
+                        <div class="form-group">
+                            <label>Enter Message</label>
+                            <textarea class="form-control" id="message"></textarea>
+                            <br />
+                            <input type="submit" class="btn btn-primary" value="Send Message" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+<!--============================= Socket End =============================-->
+    
+    
+
+
+
+
+
+
+<!--============================= FOOTER =============================-->
+<footer class="main-block dark-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="copyright">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <p>Copyright &copy; 2018 Wanderlust. All rights reserved</p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <ul>
+                        <li><a href="#"><span class="ti-facebook"></span></a></li>
+                        <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+                        <li><a href="#"><span class="ti-instagram"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--//END FOOTER -->
+
+
+
+
+
+
+
+
+
+
+<!-- jQuery, Bootstrap JS. -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
+<script>
+    if ($('.image-link').length) {
+        $('.image-link').magnificPopup({
+            type: 'image',
+            gallery: {
+                enabled: true
+            }
+        });
+    }
+    if ($('.image-link2').length) {
+        $('.image-link2').magnificPopup({
+            type: 'image',
+            gallery: {
+                enabled: true
+            }
+        });
+    }
+
+     $(function(){
+            var socket = io.connect();
+            var $messageForm = $("#messageForm");
+            var $message = $("#message");
+            var $chat = $("#chat");
+            var $messageArea = $("#messageArea");
+            var $userFormArea = $("#userFormArea");
+            var $userForm = $("#userForm");   
+            var $users = $("#users");
+            var $username = $("#username");
+
+            $messageForm.submit(function(e){
+                e.preventDefault();
+                socket.emit("send message", $message.val());
+                $message.val('');
+            });
+            socket.on("new message", function(data){
+                $chat.append('<div class="well"><strong>'+data.user+'</strong>: '+data.msg+'</div>');
+            });
+            $userForm.submit(function(e){
+                e.preventDefault();
+                socket.emit("new user", $username.val(), function(data){
+                    if(data){
+                        $userFormArea.hide();
+                        $messageArea.show();
+                    }
+                });
+                $username.val("");
+            });
+            socket.on('get users', function(data){
+                var html = '';
+                for (i = 0; i < data.length; i++){
+                    html += '<li class="list-group-item">'+data[i]+'</li>';
+                }
+                $users.html(html);
+            });
+           
+        });
+</script>
+
+<script type="text/javascript">
+
+    function Rating(){
+
+         event.preventDefault();
+
+        var newRating = {
+        Name: $("#name").val().trim(),
+        Date: $("#date").val().trim(),
+        Review: $("#review").val().trim(),
+
+      }
+
+
+        var listID = ($(this).attr("value"));
+
+        $.post("/api/" + listID + "/ratings", newRating)
+            .then(function (data) {
+
+                $("#results").text("Your Review was posted sucessfully!")
+
+            })
+
+    }
+
+
+
+    $(document).on("click", ".ratingBtn", Rating);
+
+
+
+
+
+</script>
