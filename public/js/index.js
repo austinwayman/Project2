@@ -1,22 +1,5 @@
+for (var i = 0; i < 3; i++) {
 function createDiv() {
-
-  
-
-    var data = {
-        id:"2",
-        Name: "Dodo",
-        City: "San Diego",
-        State: "Arizona",
-        BedroomNumber: 4,
-        BathroomNumber: 6,
-        Description: "Nice",
-        PricePerNight: 300,
-        Img1: "google",
-        Img2: "yahoo",
-        Img3: "bing",
-        StartDate: "20180101",
-        EndDate: "20180130"
-    }
     
     var $newDiv = $("<div class='col-md-4 featured-responsive'>");
     var featuredWrap = $("<div class='featured-place-wrap'>");
@@ -91,7 +74,7 @@ function createDiv() {
 
   $("#created").append($newDiv)
 
-};
+}};
 
 
 createDiv();
