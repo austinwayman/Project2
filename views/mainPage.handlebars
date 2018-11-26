@@ -27,10 +27,11 @@
                                     </li>
                                    
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="#">Logout</a>
+                                        <a class="btn btn-outline-light top-btn" href="/logout">Logout</a>
                                     </li>
                                     <li class="nav-item active">
-                                         <div id="navcreate"></div>
+                                        <div id="navcreate"></div>
+                                        
                                     </li>
                                     <li>
                                         <a href="/members" class="btn btn-outline-light top-btn"><span class="ti-plus"></span>
@@ -71,9 +72,7 @@
                                                 class="pe-7s-angle-right"></i></button>
                                     </div>
                                 </form>
-                                <div class="slider-link">
-                                    <a href="#">Browse Popular</a><span>or</span> <a href="#">Recently Added</a>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -86,7 +85,7 @@
 
 
     <!--============================= FEATURED PLACES =============================-->
-    <section class="main-block light-bg">
+    <section class="main-block light-bg showw" style="display:none">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-5">
@@ -95,99 +94,14 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4 featured-responsive">
-                    <div class="featured-place-wrap">
-                        <a href="#">
-                            <img src="images/phoenix1exterior.png" class="img-fluid" alt="#">
-                            <!-- <span class="featured-rating-orange">6.5</span> -->
-                            <div class="featured-title-box">
-                                <h6>Contemporary and Trendy
-                                    <br>Home in Coronado</h6>
-                                <p>3 Bedroom </p> <span>• </span>
-                                <p>2 Bathroom</p> <span></span>
-                                <ul>
-                                    <li><span class="icon-location-pin"></span>
-                                        <p>Phoenix, AZ</p>
-                                    </li>
-                                    <li><span class="icon-wallet"></span>
-                                        <p>$85/night</p>
-                                    </li>
-                                    <!-- <li><span class="icon-link"></span>
-                                            <p>https://burgerandlobster.com</p>
-                                        </li> -->
-
-                                </ul>
-                                <div class="bottom-icons">
-                                    <div class="closed-now">SEE MORE INFO</div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div id="created">
+            <div class="row" id="created">
+                 {{!-- <div id="created">
 
 
-                </div>
-                <!-- <div class="col-md-4 featured-responsive">
-                    <div class="featured-place-wrap">
-                        <a href="listing.html">
-                            <img src="images/phoenix2interior.png" class="img-fluid" alt="#">
-                            <!-- <span class="featured-rating-green">9.5</span> -->
-                <!-- <div class="featured-title-box">
-                                <h6>The Black House - Modern Loft
-                                    <br>near Arizona State University</h6>
-                                <p>2 Bedroom </p> <span>• </span>
-                                <p>2 Bathroom</p> <span></span>
-                                <ul>
-                                    <li><span class="icon-location-pin"></span>
-                                        <p>Tempe, AZ</p>
-                                    </li>
-                                    <li><span class="icon-wallet"></span>
-                                        <p>$125/night</p>
-                                    </li>
-                                </ul>
-                                <div class="bottom-icons">
-                                    <div class="closed-now">SEE MORE INFO</div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div> -->
-                <!-- <div class="col-md-4 featured-responsive">
-                    <div class="featured-place-wrap">
-                        <a href="/listing">
-                            <img src="images/phoenix3exterior.png" class="img-fluid" alt="#">
-                            <!-- <span class="featured-rating">3.2</span> -->
-                <!-- <div class="featured-title-box">
-                                <h6>Awesome Desert/Tuscan
-                                    <br>Home for 12-Central Locale</h6>
-                                <p>4 Bedrooms </p> <span>• </span>
-                                <p>3 Bathrooms</p>
-                                <ul>
-                                    <li><span class="icon-location-pin"></span>
-                                        <p>Phoenix, AZ</p>
-                                    </li>
-                                    <li><span class="icon-wallet"></span>
-                                        <p>$260/night</p>
-                                    </li>
-                                </ul>
-                                <div class="bottom-icons">
-                                    <div class="closed-now">SEE MORE INFO</div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div> -->
+                </div> --}}
+            
             </div>
-            <!-- <div class="row justify-content-center">
-                    <div class="col-md-4">
-                        <div class="featured-btn-wrap">
-                            <a href="#" class="btn btn-danger">VIEW ALL</a>
-                        </div>
-                    </div>
-                </div> -->
-        </div>
+        </div>                       
     </section>
     <!--//END FEATURED PLACES -->
 
@@ -195,7 +109,7 @@
     <!--============================= YELP API =============================-->
 
 
-    <section class="main-block light-bg">
+    <section class="main-block light-bg showw" style="display:none">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-5">
@@ -204,140 +118,15 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4 featured-responsive">
-                    <div class="featured-place-wrap">
-                        <a href="#">
-                            <img src="images/phoenix1exterior.png" class="img-fluid" alt="#">
-                            <!-- <span class="featured-rating-orange">6.5</span> -->
-                            <div class="featured-title-box">
-                                <h6>Contemporary and Trendy
-                                    <br>Home in Coronado</h6>
-                                <p>3 Bedroom </p> <span>• </span>
-                                <p>2 Bathroom</p> <span></span>
-                                <ul>
-                                    <li><span class="icon-location-pin"></span>
-                                        <p>Phoenix, AZ</p>
-                                    </li>
-                                    <li><span class="icon-wallet"></span>
-                                        <p>$85/night</p>
-                                    </li>
-                                    <!-- <li><span class="icon-link"></span>
-                                                <p>https://burgerandlobster.com</p>
-                                            </li> -->
-
-                                </ul>
-                                <div class="bottom-icons">
-                                    <div class="closed-now">SEE MORE INFO</div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div id="yelp"></div>
-                <div id="yelp1"></div>
-                <div id="yelp2"></div>
-
-            </div>
+            <div class="row" id="yelp"> </div>
+             <div class="row" id="yelp1"></div>
+              <div class="row" id="yelp2"></div>
         </div>
     </section>
 
     <!--============================= END OF YELP =============================-->
 
 
-    <!--============================= FIND PLACES =============================-->
-
-    <section class="main-block">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-5">
-                    <div class="styled-heading">
-                        <h3>Popular Destinations</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="find-place-img_wrap">
-                        <div class="grid">
-                            <figure class="effect-ruby">
-                                <img src="images/paris.jpg" class="img-fluid" alt="img13" />
-                                <figcaption>
-                                    <h5>Paris </h5>
-                                    <p>385 Listings</p>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="row find-img-align">
-                        <div class="col-md-12">
-                            <div class="find-place-img_wrap">
-                                <div class="grid">
-                                    <figure class="effect-ruby">
-                                        <img src="images/tokyo.jpg" class="img-fluid" alt="img13" />
-                                        <figcaption>
-                                            <h5>Tokyo</h5>
-                                            <p>210 Listings</p>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="find-place-img_wrap">
-                                <div class="grid">
-                                    <figure class="effect-ruby">
-                                        <img src="images/losangeles.jpg" class="img-fluid" alt="img13" />
-                                        <figcaption>
-                                            <h5>Los Angeles </h5>
-                                            <p>114 Listings</p>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="row find-img-align">
-                        <div class="col-md-12">
-                            <div class="find-place-img_wrap">
-                                <div class="grid">
-                                    <figure class="effect-ruby">
-                                        <img src="images/Phoenix.jpeg" class="img-fluid" alt="img13" />
-                                        <figcaption>
-                                            <h5>Phoenix </h5>
-                                            <p>577 Listings</p>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="find-place-img_wrap">
-                                <div class="grid">
-                                    <figure class="effect-ruby">
-                                        <img src="images/london.jpeg" class="img-fluid" alt="img13" />
-                                        <figcaption>
-                                            <h5>London </h5>
-                                            <p>79 Listings</p>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--//END FIND PLACES -->
 
 
     <!--============================= FOOTER =============================-->
@@ -382,14 +171,20 @@
 
              $.get("/api/user_data").then(function (data){
                  console.log(data)
-                
 
-                //   <a class="dropdown-item" href="/userlistings/" + >View My Listings</a>
+           
+
+                
+             
 
                 var navLink = $("<a>")
-                navLink.text("My Listings")
-                navLink.addClass("dropdown-item")
+                navLink.addClass("btn btn-outline-light top-btn")
                 navLink.attr("href", "/userlistings/" + data.id)
+                var navSpan = $("<span>")
+                navSpan.addClass("ti-eye")
+                navLink.append(navSpan)
+                navLink.text("My Listings")
+                
 
                 $("#navcreate").append(navLink)
         
@@ -432,6 +227,9 @@
         $("#searchButton").on("click", function (event) {
 
             event.preventDefault();
+
+
+            $(".showw").css("display", "block")
 
             var citySearch = $("#citySearch").val()
             var stateSearch = $("#stateSearch").val()
@@ -539,7 +337,7 @@
 
                 for (var x = 0; x < data.jsonBody.businesses.length; x++) {
 
-                    var $newDiv = $("<div class='col-md-4 featured-responsive'>");
+                    var $newDiv = $("<div class='col-xl-4 featured-responsive'>");
                     var featuredWrap = $("<div class='featured-place-wrap'>");
                     var newImage = $("<img>")
                     newImage.attr("src", data.jsonBody.businesses[x].image_url);

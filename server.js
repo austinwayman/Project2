@@ -36,3 +36,40 @@ db.sequelize.sync().then(function() {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
   });
 });
+
+var server = require("http").createServer(app);
+
+ var io = require("socket.io").listen(server);
+
+ users = [];
+ connections = [];
+
+ server.listen(process.env.PORT || 8080)
+
+
+ io.sockets.on('connection', function(socket){
+  connections.push(socket);
+  console.log("Connected: %s sockets connected", connections.length);
+
+  //DISCONNECT
+  socket.on('disconnect', function(data){
+      users.splice(users.indexOf(socket.username), 1);
+      updateUsernames();
+      connections.splice(connections.indexOf(socket), 1);
+      console.log("Disconnected: %s sockets connected", connections.length);
+  });
+  //SEND MESSAGE
+  socket.on('send message', function(data){
+      io.sockets.emit("new message", {msg: data, user: socket.username});
+  });
+  //NEW USER
+  socket.on("new user", function(data, callback){
+      callback(true);
+      socket.username = data;
+      users.push(socket.username);
+      updateUsernames();
+  });
+  function updateUsernames(){
+      io.sockets.emit("get users". users);
+  }
+});
